@@ -13,4 +13,11 @@ public class student {
 
     public student() {
     }
+
+    public student(int roll_number, String name, char grade, int total_marks) {
+        this.roll_number = roll_number;
+        this.name = name;
+        this.grade = grade;
+        this.total_marks = total_marks;
+    }
 }
