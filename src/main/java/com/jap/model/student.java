@@ -6,5 +6,9 @@
 package com.jap.model;
 
 public class student {
+    private int roll_number;
+    private String name;
+    private char grade;
+    private int total_marks;
 
 }
