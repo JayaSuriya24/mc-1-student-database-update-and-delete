@@ -11,4 +11,6 @@ public class student {
     private char grade;
     private int total_marks;
 
+    public student() {
+    }
 }
