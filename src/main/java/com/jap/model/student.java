@@ -76,4 +76,14 @@ public class student {
         result = 31 * result + total_marks;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "student{" +
+                "roll_number=" + roll_number +
+                ", name='" + name + '\'' +
+                ", grade=" + grade +
+                ", total_marks=" + total_marks +
+                '}';
+    }
 }
