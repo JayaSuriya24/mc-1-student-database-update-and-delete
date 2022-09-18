@@ -7,16 +7,16 @@ package com.jap.model;
 
 import java.util.Objects;
 
-public class student {
+public class Student {
     private int roll_number;
     private String name;
     private char grade;
     private int total_marks;
 
-    public student() {
+    public Student() {
     }
 
-    public student(int roll_number, String name, char grade, int total_marks) {
+    public Student(int roll_number, String name, char grade, int total_marks) {
         this.roll_number = roll_number;
         this.name = name;
         this.grade = grade;
@@ -60,7 +60,7 @@ public class student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        student student = (student) o;
+        Student student = (Student) o;
 
         if (roll_number != student.roll_number) return false;
         if (grade != student.grade) return false;
@@ -79,11 +79,6 @@ public class student {
 
     @Override
     public String toString() {
-        return "student{" +
-                "roll_number=" + roll_number +
-                ", name='" + name + '\'' +
-                ", grade=" + grade +
-                ", total_marks=" + total_marks +
-                '}';
+        return "student{" + "roll_number=" + roll_number + ", name='" + name + '\'' + ", grade=" + grade + ", total_marks=" + total_marks + '}';
     }
 }
