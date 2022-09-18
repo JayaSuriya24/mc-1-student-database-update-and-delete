@@ -7,10 +7,7 @@ package com.jap.repository;
 
 import com.jap.model.Student;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +28,22 @@ public class StudentDetails {
             studentList.forEach(System.out::println);
         }
     }
-    public void deleteStudentData(){}
+    public void deleteStudentData(Connection connection,int roll_number) throws SQLException {
+        String deleteQuery = "DELETE FROM `school`.`student` WHERE (`roll_number` = ?);";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            preparedStatement.setInt(1, roll_number);
+            preparedStatement.executeUpdate();
+        }
+    }
+    public void updateStudentData(Connection connection, String name, char grade, int total_marks, int roll_number) throws SQLException {
+        String updateQuery = "UPDATE `school`.`student` SET `name` = ?,`grade`= ?,`total_marks`= ? WHERE (`roll_number` = ? );";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
+            preparedStatement.setInt(1,roll_number );
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, String.valueOf(grade));
+            preparedStatement.setInt(4,total_marks);
+            preparedStatement.executeUpdate();
+        }
+    }
 
 }

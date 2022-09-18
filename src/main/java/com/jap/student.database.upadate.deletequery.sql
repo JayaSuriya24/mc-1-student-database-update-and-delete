@@ -12,8 +12,6 @@ CREATE TABLE IF NOT EXISTS `school`.`student`(
 --query to select all the values in the table
 SELECT * FROM school.student;
 -- query to insert the values inside the table for all the fields
---query for rollNumber 624
-INSERT INTO `school`.`student` (`roll_number`, `name`, `grade`,`total_marks`) VALUES ('624', 'suriya', 'a','400');
 --query for rollNumber 625
 INSERT INTO `school`.`student` (`roll_number`, `name`, `grade`,`total_marks`) VALUES ('625', 'ajay', 'b','454');
 --query for rollNumber 626
@@ -22,3 +20,9 @@ INSERT INTO `school`.`student` (`roll_number`, `name`, `grade`,`total_marks`) VA
 INSERT INTO `school`.`student` (`roll_number`, `name`, `grade`,`total_marks`) VALUES ('627', 'sugeen', 'c','490');
 --query for rollNumber 628
 INSERT INTO `school`.`student` (`roll_number`, `name`, `grade`,`total_marks`) VALUES ('628', 'hari', 'a','498');
+
+--delete query
+DELETE FROM `school`.`student` WHERE (`roll_number` = '627');
+
+--update query
+UPDATE `school`.`student` SET `name` = 'suriya',`grade`= 'a',`total_marks`= '500' WHERE (`roll_number` = '625');
